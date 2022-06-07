@@ -9,7 +9,7 @@ fi
 
 # Install BCE (Buffer Copy Engine) module
 git clone https://github.com/t2linux/apple-bce-drv /usr/src/apple-bce-0.2
-cat > /usr/src/apple-bce-0.2/dkms.conf << EOF
+cat > /usr/src/apple-bce-0.2/dkms.conf << 'EOF'
 PACKAGE_NAME="apple-bce"
 PACKAGE_VERSION="0.2"
 MAKE[0]="make KVERSION=$kernelver"
@@ -21,7 +21,7 @@ EOF
 dkms install -m apple-bce -v 0.2
 
 # Install Touchbar and Ambient Light sensor modules
-git clone https://github.com/Redecorating/apple-ib-drv /usr/src/apple-ibridge-0.1
+git clone https://github.com/t2linux/apple-ib-drv /usr/src/apple-ibridge-0.1
 dkms install -m apple-ibridge -v 0.1
 
 # Load kernel modules
